@@ -100,8 +100,8 @@ if __name__ == '__main__':
     parser.add_argument('--epoch', type=int, default=20)
     parser.add_argument('--token_len', type=int, default=10)
 
-    parser.add_argument('--data_addr', type=Path, default='/work01/daiqin/how-KG-ATT-help/neighbor_symbolic_encoder/data/fb_crst_data_rand_3times_neighbor.txt')
-    parser.add_argument('--sym2id_addr', type=Path, default='/work01/daiqin/how-KG-ATT-help/neighbor_symbolic_encoder/data/sym2id_nyt10_fb.json')
+    parser.add_argument('--data_addr', type=Path, default='data/kg.txt')
+    parser.add_argument('--sym2id_addr', type=Path, default='data/sym2id.json')
 
     parser.add_argument('--sym_size', type=int, default=10000)
     parser.add_argument('--kg_ckpt', type=str, default='')
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     df = extract_ug_data(args.data_addr)
     with open(args.sym2id_addr) as file_sym2id:
         symbol2id = json.load(file_sym2id)
-    symbol2id['[PAD]'] = len(symbol2id)
+    symbol2id['[MASK]'] = len(symbol2id)
     args.sym_size = len(symbol2id)
     
     train_df, val_df = train_test_split(df, test_size=0.9)
