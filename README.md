@@ -2,7 +2,7 @@
 Codes for pre-training KG encoder for XBE model.
 
 # Pre-training Steps
-1. Prepare Knowledge Grpah(KG) triplets (e.g., `kg.txt`) and a dictionary for indexing KG elements (i.e., entities and relations) (e.g., `sym2id.json`).
+1. Prepare Knowledge Grpah(KG) triplets (e.g., `kg.txt`) and a dictionary for indexing KG elements (i.e., entities and relations) (e.g., `sym2id.json`), which should be consistent with the one used in XBE model.
  - `./data/kg.txt`
    ~~~
    m.07ssc /common/phone_number/service_location   m.01fw9h
