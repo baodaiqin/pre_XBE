@@ -5,11 +5,13 @@ Codes for pre-training KG encoder for XBE model.
 1. Prepare Knowledge Grpah(KG) triplets (e.g., `kg.txt`) and a dictionary for indexing KG elements (i.e., entities and relations) (e.g., `sym2id.json`).
  - `./data/kg.txt`
    ~~~
-
+   m.07ssc /common/phone_number/service_location   m.01fw9h
+   m.0jm6n /sports/professional_sports_team/draft_picks    m.0cymln
+   m.019rd /business/employment_tenure/person      m.01xcgf
    ~~~
 - `./data/sym2id.json`
   ~~~
-
+  {"m.01kyln": 0, "m.02pt7p4": 1, ... "/basketball/basketball_player/player_statistics": 21, ... "[MASK]": ...}
   ~~~
 2. Pre-training the KG encoder via following command:
    ~~~
@@ -20,4 +22,4 @@ Codes for pre-training KG encoder for XBE model.
        --data_addr data/kg.txt \
        --sym2id_addr data/sym2id.json
    ~~~
-3. Put the pre-trained checkpoint (e.g., *.ckpt) under `code_xbe/xbe/ckpt_kg`.
+3. Put the pre-trained checkpoint (e.g., `kg_encoder.ckpt`) under `code_xbe/xbe/ckpt_kg`.
